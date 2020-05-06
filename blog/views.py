@@ -67,6 +67,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin,DeleteView):
         return False
 
 def about(request):
-    return render(request, 'blog/about.html',{'title':User.objects.filter(username='andy').first()})
+    return render(request, 'blog/about.html',{'name':request.user.username})
 
 
